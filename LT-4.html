@@ -1,0 +1,78 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Product Information Box</title>
+  <style>
+    .product {
+      display: inline-block; /* Step 3 */
+      width: 220px;
+      margin: 12px;          /* margin between boxes */
+      padding: 16px;         /* padding inside box */
+      border: 1px solid #ccc;/* border */
+      background-color: #f9f9f9; /* background color */
+      text-align: center;    /* Step 6: center content */
+      vertical-align: top;
+    }
+
+    .product:hover {
+      outline: 3px solid #0073e6; /* Step 5: outline on hover */
+      outline-offset: 4px;
+    }
+
+    .product img {
+      width: 100px;
+      height: 100px;
+      display: block;
+      margin: 0 auto 10px;
+    }
+
+    .product h2 {
+      font-size: 18px;
+      margin: 8px 0;
+    }
+
+    .product p {
+      font-size: 14px;
+      margin: 8px 0;
+    }
+
+    .product .price {
+      font-weight: bold;
+      margin: 8px 0;
+    }
+
+    .product a {
+      text-decoration: none;
+      border: 1px solid #0073e6;
+      padding: 6px 10px;
+      border-radius: 4px;
+      display: inline-block;
+    }
+  </style>
+</head>
+<body>
+  <div class="product">
+    <img src="https://via.placeholder.com/100" alt="Laptop">
+    <h2>Laptop</h2>
+    <p>Lightweight laptop with long battery life.</p>
+    <div class="price">$799</div>
+    <a href="#">Buy Now</a>
+  </div>
+
+  <div class="product">
+    <img src="https://via.placeholder.com/100" alt="Headphones">
+    <h2>Headphones</h2>
+    <p>Noise-cancelling over-ear headphones.</p>
+    <div class="price">$199</div>
+    <a href="#">Buy Now</a>
+  </div>
+
+  <div class="product">
+    <img src="https://via.placeholder.com/100" alt="Smartwatch">
+    <h2>Smartwatch</h2>
+    <p>Track fitness and notifications on the go.</p>
+    <div class="price">$149</div>
+    <a href="#">Buy Now</a>
+  </div>
+</body>
+</html>
