@@ -1,0 +1,225 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Registration Form</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f5f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 500px;
+        }
+        
+        .form-container {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+        }
+        
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        
+        h2 {
+            margin-bottom: 15px;
+            color: #555;
+            font-size: 1.2rem;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #333;
+        }
+        
+        input[type="text"],
+        input[type="email"],
+        input[type="password"] {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        
+        .role-group {
+            display: flex;
+            gap: 20px;
+            margin-top: 10px;
+        }
+        
+        .role-option {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .role-option input {
+            margin-right: 5px;
+        }
+        
+        .link-text {
+            text-align: center;
+            margin-top: 20px;
+            color: #555;
+        }
+        
+        .link-text a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        
+        .link-text a:hover {
+            text-decoration: underline;
+        }
+        
+        .submit-btn {
+            width: 100%;
+            padding: 12px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        
+        .submit-btn:hover {
+            background-color: #0056b3;
+        }
+        
+        .page-indicator {
+            text-align: center;
+            margin-top: 20px;
+            color: #666;
+        }
+        
+        .page-indicator a {
+            color: #007bff;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+        
+        .page-indicator a:hover {
+            text-decoration: underline;
+        }
+        
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Registration Form -->
+        <div id="registration-form" class="form-container">
+            <h1>User Registration Form</h1>
+            
+            <div class="form-group">
+                <h2>Fullname</h2>
+                <input type="text" id="fullname" placeholder="Enter your full name">
+            </div>
+            
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" placeholder="Enter your email">
+            </div>
+            
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" placeholder="Enter your password">
+            </div>
+            
+            <div class="form-group">
+                <h2>Role</h2>
+                <div class="role-group">
+                    <div class="role-option">
+                        <input type="radio" id="admin" name="role" value="admin">
+                        <label for="admin">Admin</label>
+                    </div>
+                    <div class="role-option">
+                        <input type="radio" id="user" name="role" value="user" checked>
+                        <label for="user">User</label>
+                    </div>
+                </div>
+            </div>
+            
+            <p class="link-text">Already have an account? <a href="#" id="show-login">Sign In</a></p>
+            
+            <button type="button" class="submit-btn">Submit</button>
+        </div>
+        
+        <!-- Login Form -->
+        <div id="login-form" class="form-container hidden">
+            <h1>User Login Form</h1>
+            
+            <div class="form-group">
+                <label for="login-email">Email</label>
+                <input type="email" id="login-email" placeholder="Enter your email">
+            </div>
+            
+            <div class="form-group">
+                <label for="login-password">Password</label>
+                <input type="password" id="login-password" placeholder="Enter your password">
+            </div>
+            
+            <p class="link-text">Don't have any account? <a href="#" id="show-registration">SignUp</a></p>
+            
+            <button type="button" class="submit-btn">Submit</button>
+        </div>
+        
+        <div class="page-indicator">
+            <a href="#" id="go-to-registration">Registration Form</a> | 
+            <a href="#" id="go-to-login">Login Form</a>
+        </div>
+    </div>
+
+    <script>
+        const registrationForm = document.getElementById('registration-form');
+        const loginForm = document.getElementById('login-form');
+        const showLoginLink = document.getElementById('show-login');
+        const showRegistrationLink = document.getElementById('show-registration');
+        const goToRegistrationLink = document.getElementById('go-to-registration');
+        const goToLoginLink = document.getElementById('go-to-login');
+       
+        function showLoginForm() {
+            registrationForm.classList.add('hidden');
+            loginForm.classList.remove('hidden');
+        }
+        
+        function showRegistrationForm() {
+            loginForm.classList.add('hidden');
+            registrationForm.classList.remove('hidden');
+        }
+        
+        showLoginLink.addEventListener('click', showLoginForm);
+        showRegistrationLink.addEventListener('click', showRegistrationForm);
+        goToRegistrationLink.addEventListener('click', showRegistrationForm);
+        goToLoginLink.addEventListener('click', showLoginForm);
+    </script>
+</body>
+</html>
